@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v20230426.1
+        uses: actions/checkout@v2.3
 
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
 
       - name: Deploy to EB
-        uses: heenasingh1011/helloworld_react@v20230426.1
+        uses: heenasingh1011/helloworld_react@v2.3
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
